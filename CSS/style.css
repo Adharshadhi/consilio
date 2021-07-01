@@ -1,0 +1,61 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.outercontainer{
+    margin-top: 100px;
+}
+
+.headercontainer h1{
+    font-weight: 700;
+}
+
+.headercontainer h3{
+    font-weight: 400;;
+}
+
+.cardcontainer{
+    margin-bottom: 500px;
+    margin-top: 75px;
+}
+
+.cardcontainer .card {
+  width: 15rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  border-radius: 4%;
+}
+
+.cardcontainer .card .card-body .card-title .confirmed {
+  color: #cd113b;
+}
+
+.cardcontainer .card .card-body .card-title .recovered {
+  color: #66de93;
+}
+
+.cardcontainer .card .card-body .card-title .active {
+  color: #185adb;
+}
+
+.cardcontainer .card .card-body .card-title .deceased {
+  color: #171717;
+}
+
+.cardcontainer .card .card-body .card-text {
+  font-size: 32px;
+  font-weight: semi-bold;
+}
+
+.positive{
+    color: #66de93;
+    font-weight: 500;
+}
+
+.negative{
+    color: #cd113b;
+    font-weight: 500;
+}

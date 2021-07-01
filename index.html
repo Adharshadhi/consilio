@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Covid19 India</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./CSS/style.css" />
+  </head>
+  <body>
+    <div class="container outercontainer">
+      <div class="d-flex justify-content-between">
+        <div class="headercontainer">
+          <h1>COVID19 INDIA</h1>
+          <h3>Daily Statistics <i class="far fa-chart-bar"></i></h3>
+        </div>
+        <div>
+          <p>* Last updated on <span class="updatedate"></span></p>
+          <p class="ml-2"><a href="#">Guidelines to follow</a></p>
+        </div>
+      </div>
+      <div class="cardcontainer d-flex justify-content-between">
+        <div class="card">
+          <div class="card-body">
+            <p class="card-title">
+              <i class="fas fa-circle confirmed mr-2"></i> Confirmed cases
+            </p>
+            <h2 class="card-text confirmedtext"></h2>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <p class="card-title">
+              <i class="fas fa-circle recovered mr-2"></i>
+              Recovered cases
+            </p>
+            <h2 class="card-text recoveredtext"></h2>
+            <p class="newrecovered"></p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <p class="card-title">
+              <i class="fas fa-circle active mr-2"></i> Active cases
+            </p>
+            <h2 class="card-text activetext"></h2>
+            <p class="newactive" style="color: #66de93"></p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <p class="card-title">
+              <i class="fas fa-circle deceased mr-2"></i> Deceased cases
+            </p>
+            <h2 class="card-text deceasedtext"></h2>
+            <p class="newdeceased" style="color: #cd113b"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <h1 style="margin-left: 100px; margin-bottom: 75px">State/UT wise cases</h1>
+    <div class="container" style="margin-bottom: 100px">
+      <div class="row" style="margin-bottom: 75px">
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-bottom: 75px">
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-bottom: 75px">
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-bottom: 75px">
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-bottom: 75px">
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-bottom: 75px">
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-bottom: 75px">
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-bottom: 75px">
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-bottom: 75px">
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-bottom: 75px">
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-bottom: 75px">
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-bottom: 75px">
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Karnataka</h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+              <h5 class="card-text deceasedText">
+                <i class="fas fa-circle deceased mr-2"></i>Confirmed
+                <span style="font-weight: bold; font-size: 28px">123456</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/4774734762.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/JS/script.js"></script>
+  </body>
+</html>
