@@ -3,9 +3,14 @@ const confirmedText = document.querySelector(".confirmedtext");
 const recoveredText = document.querySelector(".recoveredtext");
 const activeText = document.querySelector(".activetext");
 const deceasedText = document.querySelector(".deceasedtext");
+
+//new cases
 const newRecovered = document.querySelector(".newrecovered");
 const newActive = document.querySelector(".newactive");
 const newDeceased = document.querySelector(".newdeceased");
+
+//statewise
+const stateDetails = document.querySelector(".statedetails");
 
 //newcases
 function positiveOrNot(caseData) {
@@ -53,4 +58,29 @@ fetch(
     } else {
       newDeceased.classList.add("negative");
     }
+
+    //state wise
+    data.regionData.forEach((stateUT) => {
+      let stateName = document.createElement("td");
+      let stateConfirmed = document.createElement("td");
+      let stateRecovered = document.createElement("td");
+      let stateActive = document.createElement("td");
+      let stateDeceased = document.createElement("td");
+      let newRow = document.createElement("tr");
+
+      stateName.textContent = stateUT.region;
+      stateConfirmed.textContent = stateUT.totalInfected;
+      stateRecovered.textContent = stateUT.recovered;
+      stateActive.textContent = stateUT.activeCases;
+      stateDeceased.textContent = stateUT.deceased;
+
+      newRow.append(
+        stateName,
+        stateConfirmed,
+        stateRecovered,
+        stateActive,
+        stateDeceased
+      );
+      stateDetails.append(newRow);
+    });
   });
