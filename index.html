@@ -27,6 +27,85 @@
   </head>
   <body>
     <div class="container outercontainer">
+      <!-- guidelines modal -->
+      <div
+        class="modal fade bd-example-modal-lg"
+        id="guidelinesModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myLargeModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="exampleModalLongTitle">
+                Prevent the spread of COVID19
+              </h3>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div>
+                <p>
+                  <i
+                    style="color: #04009a; font-size: 36px"
+                    class="fas fa-people-arrows"
+                  ></i>
+                  Keep at least 6 feet between yourself and others if you must
+                  be in public
+                </p>
+              </div>
+              <div>
+                <p>
+                  Wear a cloth face covering over your mouth and nose when
+                  around others
+                  <i
+                    style="color: #04009a; font-size: 36px"
+                    class="fas fa-head-side-mask"
+                  ></i>
+                </p>
+              </div>
+              <div>
+                <p>
+                  <i
+                    style="color: #04009a; font-size: 36px"
+                    class="fas fa-box-tissue"
+                  ></i>
+                  Cover your nose and mouth with a tissue or use your elbow
+                </p>
+              </div>
+              <div>
+                <p>
+                  Wash your hands often with soap and water for at least 20
+                  seconds
+                  <i
+                    style="color: #04009a; font-size: 36px"
+                    class="fas fa-hands-wash"
+                  ></i>
+                </p>
+              </div>
+              <div>
+                <p>
+                  <i
+                    style="color: #04009a; font-size: 36px"
+                    class="fas fa-spray-can"
+                  ></i>
+                  Clean and disinfect surfaces around your home and work
+                  frequently
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- modal ends -->
       <div class="d-flex justify-content-between">
         <div class="headercontainer">
           <h1>COVID19 INDIA</h1>
@@ -34,7 +113,11 @@
         </div>
         <div>
           <p>* Last updated on <span class="updatedate"></span></p>
-          <p class="ml-2"><a href="#">Guidelines to follow</a></p>
+          <p class="ml-2">
+            <a href="#" data-toggle="modal" data-target="#guidelinesModal"
+              >Guidelines to follow</a
+            >
+          </p>
         </div>
       </div>
       <div class="cardcontainer d-flex justify-content-between">
