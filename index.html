@@ -27,96 +27,16 @@
   </head>
   <body>
     <div class="container outercontainer">
-      <!-- guidelines modal -->
-      <div
-        class="modal fade bd-example-modal-lg"
-        id="guidelinesModal"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="myLargeModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h3 class="modal-title" id="exampleModalLongTitle">
-                Prevent the spread of COVID19
-              </h3>
-              <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div>
-                <p>
-                  <i
-                    style="color: #04009a; font-size: 36px"
-                    class="fas fa-people-arrows"
-                  ></i>
-                  Keep at least 6 feet between yourself and others if you must
-                  be in public
-                </p>
-              </div>
-              <div>
-                <p>
-                  Wear a cloth face covering over your mouth and nose when
-                  around others
-                  <i
-                    style="color: #04009a; font-size: 36px"
-                    class="fas fa-head-side-mask"
-                  ></i>
-                </p>
-              </div>
-              <div>
-                <p>
-                  <i
-                    style="color: #04009a; font-size: 36px"
-                    class="fas fa-box-tissue"
-                  ></i>
-                  Cover your nose and mouth with a tissue or use your elbow
-                </p>
-              </div>
-              <div>
-                <p>
-                  Wash your hands often with soap and water for at least 20
-                  seconds
-                  <i
-                    style="color: #04009a; font-size: 36px"
-                    class="fas fa-hands-wash"
-                  ></i>
-                </p>
-              </div>
-              <div>
-                <p>
-                  <i
-                    style="color: #04009a; font-size: 36px"
-                    class="fas fa-spray-can"
-                  ></i>
-                  Clean and disinfect surfaces around your home and work
-                  frequently
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- modal ends -->
       <div class="d-flex justify-content-between">
         <div class="headercontainer">
-          <h1>COVID19 INDIA</h1>
-          <h3>Daily Statistics <i class="far fa-chart-bar"></i></h3>
+          <h1 style="color:#185ADB">COVID19 INDIA</h1>
+          <h3>Daily Statistics <i style="color:#185ADB" class="far fa-chart-bar"></i></h3>
         </div>
         <div>
-          <p>* Last updated on <span class="updatedate"></span></p>
+          <p>* Last updated on <b><span class="updatedate"></span></b></p>
           <p class="ml-2">
-            <a href="#" data-toggle="modal" data-target="#guidelinesModal"
-              >Guidelines to follow</a
-            >
+            <a href="#guidelinesContainer">Guidelines to follow</a>
+            <p class="ml-2">For booking vaccination slot, visit <a href="https://www.cowin.gov.in/home" target="_blank">Cowin portal <i style="color:#7365e6" class="fas fa-arrow-right"></i> </a></p>
           </p>
         </div>
       </div>
@@ -159,7 +79,7 @@
         </div>
       </div>
       <!-- State wise -->
-      <h2 style="margin-bottom: 50px">State/UT wise cases</h2>
+      <h2 style="margin-bottom: 50px ">State/UT wise cases</h2>
       <table class="table table-bordered" style="margin-bottom: 100px">
         <thead>
           <tr>
@@ -172,6 +92,129 @@
         </thead>
         <tbody class="statedetails"></tbody>
       </table>
+      <div style="width: 350px;height: 350px;">
+        <canvas id="myChart" width="400" height="400"></canvas>
+      </div>
+      <!-- guidelines -->
+      <div class="d-flex justify-content-between">
+        <div
+        id="guidelinesContainer"
+        style="margin-top: 100px; margin-bottom: 100px; width: 40%;"
+      >
+        <h3 class="text-center">Prevent the spread of COVID19 </h3>
+        <div class="d-flex justify-content-center" >
+          <i style="color: #cd113b;margin-bottom: 25px;font-size: 32px;" class="fas fa-virus-slash"></i>
+        </div>
+        <div class="d-flex justify-content-evenly">
+          <i style="font-size: 28px; color: #185ADB;" class="fas fa-people-arrows"></i>
+          <p class="ml-3" style="font-weight: 500;">
+            Keep at least 6 feet between yourself and others if you are in
+            public.
+          </p>
+        </div>
+        <div class="d-flex justify-content-evenly">
+          <i class="fas fa-head-side-mask" style="font-size: 28px; color: #185ADB;"></i>
+          <p class="ml-3" style="font-weight: 500;">
+            Wear a cloth face covering over your mouth and nose when around
+            others.
+          </p>
+        </div>
+        <div class="d-flex justify-content-evenly">
+          <i class="fas fa-box-tissue" style="font-size: 28px; color: #185ADB;"></i>
+          <p class="ml-3" style="font-weight: 500;">
+            Cover your nose and mouth with a tissue or use your elbow.
+          </p>
+        </div>
+        <div class="d-flex justify-content-evenly">
+          <i class="fas fa-hands-wash" style="font-size: 28px; color: #185ADB;"></i>
+          <p class="ml-3" style="font-weight: 500;">
+            Wash your hands often with soap and water for at least 20 seconds.
+          </p>
+        </div>
+        <div class="d-flex justify-content-evenly">
+          <i class="fas fa-spray-can" style="font-size: 28px; color: #185ADB;"></i>
+          <p class="ml-3" style="font-weight: 500;">
+            Clean and disinfect surfaces around your home and work frequently.
+          </p>
+        </div>
+        <div class="d-flex justify-content-evenly">
+          <i class="fas fa-syringe" style="font-size: 28px; color: #185ADB;"></i>
+          <p class="ml-3" style="font-weight: 500;">
+            Take both doses of vaccine as soon as possible.
+          </p>
+        </div>
+      </div>
+      <!-- guidelines end-->
+      <!-- vaccination steps -->
+      <div
+      id="vaccineContainer"
+      style="margin-top: 100px; margin-bottom: 100px; width: 40%;"
+    >
+      <h3  class="text-center">Schedule vaccine for COVID19 </h3>
+      <div class="d-flex justify-content-center" >
+        <i style="color: #66de93;margin-bottom: 25px;font-size: 32px;" class="fas fa-syringe"></i>
+      </div>
+      <div class="d-flex justify-content-evenly">
+        <i style="font-size: 28px; color: #185ADB;" class="fas fa-laptop-code"></i>
+        <p class="ml-3" style="font-weight: 500;">
+          Go to  <a href="https://www.cowin.gov.in/home" target="_blank">Cowin </a> portal and register using your mobile number.
+        </p>
+      </div>
+      <div class="d-flex justify-content-evenly">
+        <i style="font-size: 28px; color: #185ADB;" class="fas fa-mobile-alt" ></i>
+        <p class="ml-3" style="font-weight: 500;">
+          Provide the OTP required for the registration.
+        </p>
+      </div>
+      <div class="d-flex justify-content-evenly">
+        <i class="fas fa-clipboard-list" style="font-size: 28px; color: #185ADB;"></i>
+        <p class="ml-3" style="font-weight: 500;">
+          Fill the required details for registering yourself or other members.
+        </p>
+      </div>
+      <div class="d-flex justify-content-evenly">
+        <i class="fas fa-calendar-alt" style="font-size: 28px; color: #185ADB;"></i>
+        <p class="ml-3" style="font-weight: 500;">
+          After registring, schedule an appointment by searching available slots.
+        </p>
+      </div>
+      <div class="d-flex justify-content-evenly">
+        <i class="fas fa-user-check" style="font-size: 28px; color: #185ADB;"></i>
+        <p class="ml-3" style="font-weight: 500;">
+          Check properly your age, vaccination center and available vaccine.
+        </p>
+      </div>
+      <div class="d-flex justify-content-evenly">
+        <i class="fas fa-clock" style="font-size: 28px; color: #185ADB;"></i>
+        <p class="ml-3" style="font-weight: 500;">
+          Choose a time period and confirm the details for appointment.
+        </p>
+      </div>
+    </div>
+    <!-- vaccination steps end -->
+      </div>
+      
+
+      <!-- subscribe -->
+      <div class="subscribe d-flex flex-column justify-content-center align-items-center" style="margin-top: 75px;margin-bottom: 75px;">
+        <div style="color: #7365e6; font-size: 64px;"><i class="fas fa-envelope"></i></div>
+        <p style="font-size: 18px; font-weight: 500;">Subscribe to get the latest news and updates of our fight against COVID19.</p>
+        <div class="formcontainer">
+          <form action="/index.html" method="POST">
+            <input class="emailinput" type="email" name="email" placeholder="Enter your email id" required>
+            <button class="subscribebtn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- footer -->
+      <footer>
+        <p>Stay home. Stay safe. We are all in this together.</p>
+        <p>Connect with us</p>
+        <a href="#instagram">Fb</a>
+        <a href="#instagram">Insta</a>
+        <a href="#instagram">Twitter</a>
+      </footer>
     </div>
 
     <script
@@ -193,6 +236,7 @@
       src="https://kit.fontawesome.com/4774734762.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.4.0/dist/chart.min.js"></script>
     <script src="/JS/script.js"></script>
   </body>
 </html>

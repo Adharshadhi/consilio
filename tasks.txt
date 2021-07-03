@@ -1,0 +1,9 @@
+Remaining
+
+1) Chart
+2) Go back
+3) Table styling
+4) Guidelines styling
+5) Subscribe and footer styling
+6) Navbar(optional)
+7) Preloader

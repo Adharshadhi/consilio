@@ -1,8 +1,8 @@
-body {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+html,body {
+    scroll-behavior: smooth;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
 
 .outercontainer{
@@ -26,7 +26,7 @@ body {
   width: 15rem;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-  border-radius: 4%;
+  border-radius: 10px;
 }
 
 .cardcontainer .card .card-body .card-title .confirmed {
@@ -58,4 +58,40 @@ body {
 .negative{
     color: #cd113b;
     font-weight: 500;
+}
+
+/* guidelines */
+#guidelinesContainer, #vaccineContainer{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* subscription*/
+
+.formcontainer form .emailinput{
+    outline: none;
+    width: 300px;
+    border-radius: 10px;
+    padding: 5px;
+    border: solid #7365e6 2px;
+}
+
+.subscribebtn{
+    outline: none;
+    color: #7365e6;
+    background-color: white;
+    border: solid #7365e6 2px;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 5px;
+    width: 125px;
+    margin-left: 15px;
+}
+
+.subscribebtn:hover{
+    color: white;
+    background-color: #7365e6;
+    
 }

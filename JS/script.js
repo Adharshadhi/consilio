@@ -59,6 +59,37 @@ fetch(
       newDeceased.classList.add("negative");
     }
 
+    //chart
+
+    var ctx = document.getElementById("myChart").getContext("2d");
+    var myChart = new Chart(ctx, {
+      type: "doughnut",
+      data: {
+        labels: ["Confirmed", "Recovered", "Active", "Deceased"],
+        datasets: [
+          {
+            label: "Number of cases",
+            data: [
+              data.totalCases,
+              data.recovered,
+              data.activeCases,
+              data.deaths,
+            ],
+            backgroundColor: ["#cd113b", "#66de93", "#185adb", "#171717"],
+            borderColor: [],
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+      },
+    });
+
     //state wise
     data.regionData.forEach((stateUT) => {
       let stateName = document.createElement("td");
