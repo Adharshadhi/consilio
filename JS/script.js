@@ -12,6 +12,9 @@ const newDeceased = document.querySelector(".newdeceased");
 //statewise
 const stateDetails = document.querySelector(".statedetails");
 
+//subscribe button
+const subscribeBtn = document.querySelector(".subscribebtn");
+
 //newcases
 function positiveOrNot(caseData) {
   let createdIcon = document.createElement("i");
