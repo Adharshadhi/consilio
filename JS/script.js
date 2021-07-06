@@ -69,13 +69,35 @@ fetch(
       let stateRecovered = document.createElement("td");
       let stateActive = document.createElement("td");
       let stateDeceased = document.createElement("td");
+      let newlyInfected = document.createElement("span");
+      let newlyRecovered = document.createElement("span");
+      let newlyDeceased = document.createElement("span");
       let newRow = document.createElement("tr");
 
       stateName.textContent = stateUT.region;
-      stateConfirmed.textContent = stateUT.totalInfected;
-      stateRecovered.textContent = stateUT.recovered;
-      stateActive.textContent = stateUT.activeCases;
-      stateDeceased.textContent = stateUT.deceased;
+      stateConfirmed.innerHTML = `<b>${stateUT.totalInfected}</b>`;
+      stateRecovered.innerHTML = `<b>${stateUT.recovered}</b>`;
+      stateActive.innerHTML = `<b>${stateUT.activeCases}</b>`;
+      stateDeceased.innerHTML = `<b>${stateUT.deceased}</b>`;
+      newlyInfected.textContent = stateUT.newInfected;
+      newlyRecovered.textContent = stateUT.newRecovered;
+      newlyDeceased.textContent = stateUT.newDeceased;
+
+      if (stateUT.newInfected.toString().includes("-")) {
+        newlyInfected.classList.add("positivetable");
+      } else {
+        newlyInfected.classList.add("negativetable");
+      }
+      newlyInfected.append(positiveOrNot(stateUT.newInfected.toString()));
+
+      newlyRecovered.classList.add("positivetable");
+      newlyRecovered.append(positiveOrNot(stateUT.newRecovered.toString()));
+      newlyDeceased.classList.add("negativetable");
+      newlyDeceased.append(positiveOrNot(stateUT.newDeceased.toString()));
+
+      stateRecovered.append(newlyRecovered);
+      stateActive.append(newlyInfected);
+      stateDeceased.append(newlyDeceased);
 
       newRow.append(
         stateName,
@@ -224,9 +246,3 @@ fetch("https://api.covid19india.org/data.json", {})
       deceasedChart.update();
     }
   });
-
-// function addCaseData(data) {
-//   chart.data.labels.push(label);
-//   chart.data.
-//   chart.update();
-// }
