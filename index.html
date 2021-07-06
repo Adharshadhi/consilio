@@ -78,23 +78,58 @@
           </div>
         </div>
       </div>
+
       <!-- State wise -->
       <h2 style="margin-bottom: 50px ">State/UT wise cases</h2>
-      <table class="table table-bordered" style="margin-bottom: 100px">
-        <thead>
+      <table class="table table-bordered table-hover" style="margin-bottom: 100px">
+        <thead class="thead-light">
           <tr>
-            <th scope="col">State/UT</th>
-            <th scope="col">Confirmed</th>
-            <th scope="col">Recovered</th>
-            <th scope="col">Active</th>
-            <th scope="col">Deceased</th>
+            <th style="color: #7365e6" scope="col">State/UT</th>
+            <th style="color: #cd113b;" scope="col">Confirmed</th>
+            <th style="color: #66de93;" scope="col">Recovered</th>
+            <th style="color: #185ADB;" scope="col">Active</th>
+            <th style="color: #171717;" scope="col">Deceased</th>
           </tr>
         </thead>
         <tbody class="statedetails"></tbody>
       </table>
-      <div style="width: 350px;height: 350px;">
-        <canvas id="myChart" width="400" height="400"></canvas>
+
+      <!-- chart -->
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="card">
+            <div class="card-body">
+              <canvas id="confirmedchart" width="400" height="400"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 offset-1">
+          <div class="card">
+            <div class="card-body">
+              <canvas id="recoveredchart" width="400" height="400"></canvas>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <div style="margin-top: 75px;" class="row">
+        <div class="col-lg-5">
+          <div class="card">
+            <div class="card-body">
+              <canvas id="activechart" width="400" height="400"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 offset-1">
+          <div class="card">
+            <div class="card-body">
+              <canvas id="deceasedchart" width="400" height="400"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
       <!-- guidelines -->
       <div class="d-flex justify-content-between">
         <div

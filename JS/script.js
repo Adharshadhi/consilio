@@ -62,37 +62,6 @@ fetch(
       newDeceased.classList.add("negative");
     }
 
-    //chart
-
-    var ctx = document.getElementById("myChart").getContext("2d");
-    var myChart = new Chart(ctx, {
-      type: "doughnut",
-      data: {
-        labels: ["Confirmed", "Recovered", "Active", "Deceased"],
-        datasets: [
-          {
-            label: "Number of cases",
-            data: [
-              data.totalCases,
-              data.recovered,
-              data.activeCases,
-              data.deaths,
-            ],
-            backgroundColor: ["#cd113b", "#66de93", "#185adb", "#171717"],
-            borderColor: [],
-            borderWidth: 1,
-          },
-        ],
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-          },
-        },
-      },
-    });
-
     //state wise
     data.regionData.forEach((stateUT) => {
       let stateName = document.createElement("td");
@@ -118,3 +87,146 @@ fetch(
       stateDetails.append(newRow);
     });
   });
+
+//chart
+
+var confirmedChartCanvas = document
+  .getElementById("confirmedchart")
+  .getContext("2d");
+var confirmedChart = new Chart(confirmedChartCanvas, {
+  type: "line",
+  data: {
+    labels: [],
+    datasets: [
+      {
+        label: "Confirmed cases",
+        data: [],
+        backgroundColor: [],
+        borderColor: ["#cd113b"],
+        borderWidth: 1,
+      },
+    ],
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true,
+      },
+    },
+  },
+});
+
+var recoveredChartCanvas = document
+  .getElementById("recoveredchart")
+  .getContext("2d");
+var recoveredChart = new Chart(recoveredChartCanvas, {
+  type: "line",
+  data: {
+    labels: [],
+    datasets: [
+      {
+        label: "Recovered cases",
+        data: [],
+        backgroundColor: [],
+        borderColor: ["#66DE93"],
+        borderWidth: 1,
+      },
+    ],
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true,
+      },
+    },
+  },
+});
+
+var activeChartCanvas = document.getElementById("activechart").getContext("2d");
+var activeChart = new Chart(activeChartCanvas, {
+  type: "line",
+  data: {
+    labels: [],
+    datasets: [
+      {
+        label: "Active cases",
+        data: [],
+        backgroundColor: [],
+        borderColor: ["#185adb"],
+        borderWidth: 1,
+      },
+    ],
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true,
+      },
+    },
+  },
+});
+
+var deceasedChartCanvas = document
+  .getElementById("deceasedchart")
+  .getContext("2d");
+var deceasedChart = new Chart(deceasedChartCanvas, {
+  type: "line",
+  data: {
+    labels: [],
+    datasets: [
+      {
+        label: "Deceased cases",
+        data: [],
+        backgroundColor: [],
+        borderColor: ["#171717"],
+        borderWidth: 1,
+      },
+    ],
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true,
+      },
+    },
+  },
+});
+
+fetch("https://api.covid19india.org/data.json", {})
+  .then((res) => res.json())
+  .then((data) => {
+    for (let i = 488; i < data.cases_time_series.length; i++) {
+      confirmedChart.data.labels.push(data.cases_time_series[i].date);
+      confirmedChart.data.datasets[0].data.push(
+        data.cases_time_series[i].dailyconfirmed
+      );
+
+      recoveredChart.data.labels.push(data.cases_time_series[i].date);
+      recoveredChart.data.datasets[0].data.push(
+        data.cases_time_series[i].dailyrecovered
+      );
+
+      activeChart.data.labels.push(data.cases_time_series[i].date);
+      let active =
+        parseInt(data.cases_time_series[i].totalconfirmed) -
+        (parseInt(data.cases_time_series[i].totalrecovered) +
+          parseInt(data.cases_time_series[i].totaldeceased));
+      activeChart.data.datasets[0].data.push(active);
+
+      deceasedChart.data.labels.push(data.cases_time_series[i].date);
+      deceasedChart.data.datasets[0].data.push(
+        data.cases_time_series[i].dailydeceased
+      );
+
+      confirmedChart.update();
+      recoveredChart.update();
+      activeChart.update();
+      deceasedChart.update();
+    }
+  });
+
+// function addCaseData(data) {
+//   chart.data.labels.push(label);
+//   chart.data.
+//   chart.update();
+// }
