@@ -1,7 +1,0 @@
-Remaining
-
-1) Chart
-3) Table styling
-4) Guidelines styling - almost done
-5) Subscribe and footer styling - done
-7) Preloader

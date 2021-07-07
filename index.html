@@ -29,17 +29,18 @@
     <div class="container outercontainer">
       <div class="d-flex justify-content-between">
         <div class="headercontainer">
-          <h1 style="color:#474787; font-weight: 700;">COVID19 INDIA</h1>
-          <h3>Daily Statistics <i style="color:#474787" class="far fa-chart-bar"></i></h3>
+          <h1>COVID19 INDIA</h1>
+          <h3>Daily Statistics <i class="far fa-chart-bar"></i></h3>
         </div>
-        <div>
+        <div class="topsubcontainer">
           <p>* Last updated on <b><span class="updatedate"></span></b></p>
           <p class="ml-2">
-            <a style="color: #454787;text-decoration: none;" href="#guidelinesContainer">Guidelines to follow <i class="fas fa-book-open ml-1"></i></a>
-            <p class="ml-2">For booking vaccination slot, visit <a style="color: #454787;text-decoration: none;" href="https://www.cowin.gov.in/home" target="_blank">Cowin portal <i class="fas fa-arrow-right"></i> </a></p>
+            <a href="#guidelinescontainer">Guidelines to follow <i class="fas fa-book-open ml-1"></i></a>
+            <p class="ml-2">For booking vaccination slot, visit <a href="https://www.cowin.gov.in/home" target="_blank">Cowin portal <i class="fas fa-arrow-right"></i> </a></p>
           </p>
         </div>
       </div>
+
       <div class="cardcontainer d-flex justify-content-between">
         <div class="card">
           <div class="card-body">
@@ -66,7 +67,7 @@
               <i class="fas fa-circle active mr-2"></i> Active cases
             </p>
             <h2 class="card-text activetext"></h2>
-            <p class="newactive" style="color: #66de93"></p>
+            <p class="newactive"></p>
           </div>
         </div>
         <div class="card">
@@ -75,16 +76,14 @@
               <i class="fas fa-circle deceased mr-2"></i> Deceased cases
             </p>
             <h2 class="card-text deceasedtext"></h2>
-            <p class="newdeceased" style="color: #cd113b"></p>
+            <p class="newdeceased"></p>
           </div>
         </div>
       </div>
 
-      
-
       <!-- chart -->
       <div>
-        <h3 class="subheading" style="color:#474787; font-weight: 500px; width: 25%;">Recent case trends <i class="fas fa-chart-line"></i></h3>
+        <h3 class="subheading">Recent case trends <i class="fas fa-chart-line"></i></h3>
         <div class="underline"></div>
       </div>
       
@@ -105,7 +104,7 @@
         </div>
       </div>
 
-      <div style="margin-top: 75px; margin-bottom: 150px;" class="row">
+      <div class="row charttwo">
         <div class="col-lg-5">
           <div class="card chartcontainer">
             
@@ -126,7 +125,7 @@
       
       <!-- State wise -->
       <div>
-        <h2 class="subheadingtwo" style="color:#474787; font-weight: 500px; width: 35%; ">State/UT wise cases <i class="fas fa-map-marker-alt"></i></h2>
+        <h2 class="subheadingtwo">State/UT wise cases <i class="fas fa-map-marker-alt"></i></h2>
         <div class="underline">
         </div>
       </div>
@@ -134,67 +133,66 @@
       <table class="table table-bordered table-hover" >
         <thead class="thead-light">
           <tr>
-            <th style="color: #474787" scope="col">State/UT</th>
-            <th style="color: #cd113b;" scope="col">Confirmed <span class="statenewcase ml-3"></span></th>
-            <th style="color: #66de93;" scope="col">Recovered <span class="statenewrecover ml-3"></span></th>
-            <th style="color: #474787;" scope="col">Active <span class="statenewactive ml-3"></span></th>
-            <th style="color: #171717;" scope="col">Deceased <span class="statenewdeceased ml-3"></span></th>
+            <th class="statenames" scope="col">State/UT</th>
+            <th class="stateconfirmed" scope="col">Confirmed <span class="statenewcase ml-3"></span></th>
+            <th class="staterecovered" scope="col">Recovered <span class="statenewrecover ml-3"></span></th>
+            <th class="stateactive" scope="col">Active <span class="statenewactive ml-3"></span></th>
+            <th class="statedeceased" scope="col">Deceased <span class="statenewdeceased ml-3"></span></th>
           </tr>
         </thead>
         <tbody class="statedetails"></tbody>
       </table>
 
       <!-- guidelines -->
-      <div style="margin-top:100px; margin-bottom: 75px;">
-        <h2 class="subheadingthree" style="color:#474787; font-weight: 500px; width: 25%; ">Guidelines <i class="fas fa-book-open ml-1"></i></h2>
+      <div class="guidelinesheader">
+        <h2 class="subheadingthree">Guidelines <i class="fas fa-book-open ml-1"></i></h2>
         <div class="underline">
         </div>
       </div>
 
       <div class="d-flex justify-content-between">
         <div
-        id="guidelinesContainer"
-        style="margin-bottom: 100px; width: 40%;"
+        id="guidelinescontainer"
       >
         <h3 class="text-center">Prevent the spread of COVID19 </h3>
         <div class="d-flex justify-content-center" >
-          <i style="color: #cd113b;margin-bottom: 25px;font-size: 32px;" class="fas fa-virus-slash"></i>
+          <i class="fas fa-virus-slash"></i>
         </div>
         <div class="d-flex justify-content-evenly">
-          <i style="font-size: 28px; color: #474787;" class="fas fa-people-arrows"></i>
-          <p class="ml-3" style="font-weight: 500;">
+          <i class="fas fa-people-arrows sign"></i>
+          <p class="ml-3 points">
             Keep at least 6 feet between yourself and others if you are in
             public.
           </p>
         </div>
         <div class="d-flex justify-content-evenly">
-          <i class="fas fa-head-side-mask" style="font-size: 28px; color: #474787;"></i>
-          <p class="ml-3" style="font-weight: 500;">
+          <i class="fas fa-head-side-mask sign"></i>
+          <p class="ml-3 points">
             Wear a cloth face covering over your mouth and nose when around
             others.
           </p>
         </div>
         <div class="d-flex justify-content-evenly">
-          <i class="fas fa-box-tissue" style="font-size: 28px; color: #474787;"></i>
-          <p class="ml-3" style="font-weight: 500;">
+          <i class="fas fa-box-tissue sign"></i>
+          <p class="ml-3 points">
             Cover your nose and mouth with a tissue or use your elbow.
           </p>
         </div>
         <div class="d-flex justify-content-evenly">
-          <i class="fas fa-hands-wash" style="font-size: 28px; color: #474787;"></i>
-          <p class="ml-3" style="font-weight: 500;">
+          <i class="fas fa-hands-wash sign"></i>
+          <p class="ml-3 points">
             Wash your hands often with soap and water for at least 20 seconds.
           </p>
         </div>
         <div class="d-flex justify-content-evenly">
-          <i class="fas fa-spray-can" style="font-size: 28px; color: #474787;"></i>
-          <p class="ml-3" style="font-weight: 500;">
+          <i class="fas fa-spray-can sign"></i>
+          <p class="ml-3 points">
             Clean and disinfect surfaces around your home and work frequently.
           </p>
         </div>
         <div class="d-flex justify-content-evenly">
-          <i class="fas fa-syringe" style="font-size: 28px; color: #474787;"></i>
-          <p class="ml-3" style="font-weight: 500;">
+          <i class="fas fa-syringe sign"></i>
+          <p class="ml-3 points">
             Take both doses of vaccine as soon as possible.
           </p>
         </div>
@@ -202,46 +200,45 @@
       <!-- guidelines end-->
       <!-- vaccination steps -->
       <div
-      id="vaccineContainer"
-      style="margin-bottom: 100px; width: 40%;"
+      id="vaccinecontainer"
     >
       <h3  class="text-center">Schedule vaccine for COVID19 </h3>
       <div class="d-flex justify-content-center" >
-        <i style="color: #66de93;margin-bottom: 25px;font-size: 32px;" class="fas fa-syringe"></i>
+        <i class="fas fa-syringe vaccinate"></i>
       </div>
       <div class="d-flex justify-content-evenly">
-        <i style="font-size: 28px; color: #474787;" class="fas fa-laptop-code"></i>
-        <p class="ml-3" style="font-weight: 500;">
+        <i class="fas fa-laptop-code sign"></i>
+        <p class="ml-3 points">
           Go to  <a href="https://www.cowin.gov.in/home" target="_blank">Cowin </a> portal and register using your mobile number.
         </p>
       </div>
       <div class="d-flex justify-content-evenly">
-        <i style="font-size: 28px; color: #474787;"  class="fas fa-envelope-open-text mr-1"></i>
-        <p class="ml-3" style="font-weight: 500;">
+        <i  class="fas fa-envelope-open-text mr-1 sign"></i>
+        <p class="ml-3 points">
           Provide the OTP required for the registration from the mobile.
         </p>
       </div>
       <div class="d-flex justify-content-evenly">
-        <i class="fas fa-file mr-2" style="font-size: 28px; color: #474787;"></i>
-        <p class="ml-3" style="font-weight: 500;">
+        <i class="fas fa-file mr-2 sign"></i>
+        <p class="ml-3 points">
           Fill the required details for registering yourself or other members.
         </p>
       </div>
       <div class="d-flex justify-content-evenly">
-        <i class="fas fa-calendar-alt mr-1" style="font-size: 28px; color: #474787;"></i>
-        <p class="ml-3" style="font-weight: 500;">
+        <i class="fas fa-calendar-alt mr-1 sign"></i>
+        <p class="ml-3 points">
           After registring, schedule an appointment by searching available slots.
         </p>
       </div>
       <div class="d-flex justify-content-evenly">
-        <i class="fas fa-user-check" style="font-size: 28px; color: #474787;"></i>
-        <p class="ml-2" style="font-weight: 500;">
+        <i class="fas fa-user-check sign"></i>
+        <p class="ml-2 points">
           Check properly your age, vaccination center and available vaccine.
         </p>
       </div>
       <div class="d-flex justify-content-evenly">
-        <i class="fas fa-clock" style="font-size: 28px; color: #474787;"></i>
-        <p class="ml-3" style="font-weight: 500;">
+        <i class="fas fa-clock sign"></i>
+        <p class="ml-3 points">
           Choose a time period and confirm the details for appointment.
         </p>
       </div>
@@ -251,9 +248,9 @@
       
 
       <!-- subscribe -->
-      <div class="subscribe d-flex flex-column justify-content-center align-items-center" style="margin-top: 75px;margin-bottom: 125px;">
-        <div style="color: #474787; font-size: 64px;"><i class="fas fa-envelope"></i></div>
-        <p style="font-size: 18px; font-weight: 500;">Subscribe to get the latest news and updates of our fight against COVID19.</p>
+      <div class="subscribe d-flex flex-column justify-content-center align-items-center">
+        <div><i class="fas fa-envelope"></i></div>
+        <p>Subscribe to get the latest news and updates of our fight against COVID19.</p>
         <div class="formcontainer">
           <form>
             <input class="emailinput" type="email" name="email" placeholder="Enter your email id" required>
@@ -265,12 +262,12 @@
       <!-- footer -->
       <footer>
         <div class="d-flex flex-column justify-content-center align-items-center">
-          <p style="font-size: 18px; font-weight: 500;">Stay home <i style="color: #474787;" class="fas fa-home"></i> Stay safe <i style="color: #474787;" class="fas fa-user-shield"></i> We are all in this together <i style="color: #474787;" class="fas fa-users"></i></p>
-          <div style="width: 350px; font-size: 18px;" class="d-flex justify-content-between">
-            <p class="ml-2">Connect with us <i style="color: #474787;" class="fas fa-arrow-right"></i></p>
-            <a href="https://www.facebook.com/" target="_blank"> <i style="color:#098bf0" class="fab fa-facebook-square"></i></a>
-            <a href="https://www.instagram.com/" target="_blank"> <i style="color: #8a3ab9;" class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com/?lang=en" target="_blank"> <i style="color: #1DA1F2;" class="fab fa-twitter-square"></i></a>
+          <p>Stay home <i class="fas fa-home"></i> Stay safe <i class="fas fa-user-shield"></i> We are all in this together <i class="fas fa-users"></i></p>
+          <div class="d-flex justify-content-between">
+            <p class="ml-2">Connect with us <i class="fas fa-arrow-right"></i></p>
+            <a href="https://www.facebook.com/" target="_blank"> <i class="fab fa-facebook-square"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"> <i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/?lang=en" target="_blank"> <i class="fab fa-twitter-square"></i></a>
           </div>
           <p>	&copy; All rights reserved.</p>
         </div>
