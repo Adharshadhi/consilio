@@ -11,10 +11,6 @@ const newDeceased = document.querySelector(".newdeceased");
 
 //statewise
 const stateDetails = document.querySelector(".statedetails");
-
-//subscribe button
-const subscribeBtn = document.querySelector(".subscribebtn");
-
 //newcases
 function positiveOrNot(caseData) {
   let createdIcon = document.createElement("i");
@@ -123,8 +119,8 @@ var confirmedChart = new Chart(confirmedChartCanvas, {
       {
         label: "Confirmed cases",
         data: [],
-        backgroundColor: [],
-        borderColor: ["#cd113b"],
+        backgroundColor: ["#cd113b"],
+        borderColor: ["#454787"],
         borderWidth: 1,
       },
     ],
@@ -149,8 +145,8 @@ var recoveredChart = new Chart(recoveredChartCanvas, {
       {
         label: "Recovered cases",
         data: [],
-        backgroundColor: [],
-        borderColor: ["#66DE93"],
+        backgroundColor: ["#66DE93"],
+        borderColor: ["#454787"],
         borderWidth: 1,
       },
     ],
@@ -173,8 +169,8 @@ var activeChart = new Chart(activeChartCanvas, {
       {
         label: "Active cases",
         data: [],
-        backgroundColor: [],
-        borderColor: ["#185adb"],
+        backgroundColor: ["#185adb"],
+        borderColor: ["#454787"],
         borderWidth: 1,
       },
     ],
@@ -199,8 +195,8 @@ var deceasedChart = new Chart(deceasedChartCanvas, {
       {
         label: "Deceased cases",
         data: [],
-        backgroundColor: [],
-        borderColor: ["#171717"],
+        backgroundColor: ["#171717"],
+        borderColor: ["#454787"],
         borderWidth: 1,
       },
     ],
@@ -217,7 +213,8 @@ var deceasedChart = new Chart(deceasedChartCanvas, {
 fetch("https://api.covid19india.org/data.json", {})
   .then((res) => res.json())
   .then((data) => {
-    for (let i = 488; i < data.cases_time_series.length; i++) {
+    let pastMonth = data.cases_time_series.length - 30;
+    for (let i = pastMonth; i < data.cases_time_series.length; i++) {
       confirmedChart.data.labels.push(data.cases_time_series[i].date);
       confirmedChart.data.datasets[0].data.push(
         data.cases_time_series[i].dailyconfirmed
