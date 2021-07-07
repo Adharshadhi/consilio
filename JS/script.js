@@ -1,3 +1,4 @@
+const outerContainer = document.querySelector(".outercontainer");
 const updateDate = document.querySelector(".updatedate");
 const confirmedText = document.querySelector(".confirmedtext");
 const recoveredText = document.querySelector(".recoveredtext");
@@ -12,6 +13,15 @@ const newDeceased = document.querySelector(".newdeceased");
 //statewise
 const stateDetails = document.querySelector(".statedetails");
 //newcases
+
+const preLoader = document.querySelector(".preloader");
+window.onload = function () {
+  setTimeout(function () {
+    preLoader.style.display = "none";
+    outerContainer.style.display = "block";
+  }, 1000);
+};
+
 function positiveOrNot(caseData) {
   let createdIcon = document.createElement("i");
   if (caseData.includes("-")) {
