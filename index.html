@@ -27,7 +27,7 @@
   </head>
   <body>
     <div class="container outercontainer">
-      <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-between ">
         <div class="headercontainer">
           <h1>COVID19 INDIA</h1>
           <h3>Daily Statistics <i class="far fa-chart-bar"></i></h3>
@@ -42,7 +42,7 @@
       </div>
 
       <div class="cardcontainer d-flex justify-content-between">
-        <div class="card">
+        <div class="card confirmedcard">
           <div class="card-body">
             <p class="card-title">
               <i class="fas fa-circle confirmed mr-2"></i> Confirmed cases
@@ -51,7 +51,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card recoveredcard">
           <div class="card-body">
             <p class="card-title">
               <i class="fas fa-circle recovered mr-2"></i>
@@ -61,7 +61,7 @@
             <p class="newrecovered"></p>
           </div>
         </div>
-        <div class="card">
+        <div class="card activecard">
           <div class="card-body">
             <p class="card-title">
               <i class="fas fa-circle active mr-2"></i> Active cases
@@ -70,7 +70,7 @@
             <p class="newactive"></p>
           </div>
         </div>
-        <div class="card">
+        <div class="card deceasedcard">
           <div class="card-body">
             <p class="card-title">
               <i class="fas fa-circle deceased mr-2"></i> Deceased cases
@@ -88,15 +88,15 @@
       </div>
       
       <div class="row ">
-        <div class="col-lg-5">
+        <div class="col-lg-5 col-md-12 confirmedcontainer">
           <div class="card chartcontainer">
             <div class="card-body">
               <canvas id="confirmedchart" width="400" height="400"></canvas>
             </div>
           </div>
         </div>
-        <div class="col-lg-5 offset-2">
-          <div class="card chartcontainer">
+        <div class="col-lg-5 col-md-12 offset-lg-2">
+          <div class="card chartcontainer recoveredcontainer">
             <div class="card-body">
               <canvas id="recoveredchart" width="400" height="400"></canvas>
             </div>
@@ -105,7 +105,7 @@
       </div>
 
       <div class="row charttwo">
-        <div class="col-lg-5">
+        <div class="col-lg-5 col-md-12 activecontainer">
           <div class="card chartcontainer">
             
             <div class="card-body">
@@ -113,7 +113,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-5 offset-2">
+        <div class="col-lg-5 col-md-12 offset-lg-2 deceasedcontainer">
           <div class="card chartcontainer">
             
             <div class="card-body">
@@ -150,7 +150,7 @@
         </div>
       </div>
 
-      <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-between guidelinesouter">
         <div
         id="guidelinescontainer"
       >

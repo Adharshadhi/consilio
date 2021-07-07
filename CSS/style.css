@@ -168,35 +168,7 @@ html,body {
 }
 
 /* footer */
-footer div p{
-  font-size: 18px;
-  font-weight: 500;
-}
 
-.fa-home, .fa-user-shield, .fa-users{
-  color: #474787;
-}
-
-footer div div{
-  width: 350px;
-  font-size: 18px;
-}
-
-.fa-arrow-right{
-  color: #474787;
-}
-
-.fa-facebook-square{
-  color: #098bf0;
-}
-
-.fa-instagram{
-  color: #8a3ab9;;
-}
-
-.fa-twitter-square{
-  color: #1DA1F2;;
-}
 /* underline */
 .underline{
   border-top: 3px solid #474787;
@@ -265,4 +237,171 @@ footer div div{
 .subscribebtn:hover{
     color: white;
     background-color: #474787;
+}
+
+footer div p{
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.fa-home, .fa-user-shield, .fa-users{
+  color: #474787;
+}
+
+footer div div{
+  width: 350px;
+  font-size: 18px;
+}
+
+.fa-arrow-right{
+  color: #474787;
+}
+
+.fa-facebook-square{
+  color: #098bf0;
+}
+
+.fa-instagram{
+  color: #8a3ab9;;
+}
+
+.fa-twitter-square{
+  color: #1DA1F2;;
+}
+
+/*responsive*/
+@media only screen and (max-width: 576px){
+  .headercontainer h1{
+    font-size: 24px;
+  }
+
+  .headercontainer h3{
+    font-size: 18px;
+  }
+
+  .topsubcontainer{
+    font-size: 12px;
+  }
+
+  .cardcontainer{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+  }
+
+  .confirmedcard, .activecard{
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .subheading{
+    width: 60%;
+    font-size: 24px;
+  }
+
+  .recoveredcontainer, .deceasedcontainer{
+    margin-top: 75px;
+  }
+
+  .subheadingtwo{
+    width: 65%;
+    font-size: 24px;
+  }
+
+  .guidelinesheader .subheadingthree{
+    width: 65%;
+    font-size: 24px;
+  }
+
+  .guidelinesouter{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  #guidelinescontainer, #vaccinecontainer{
+    width: 100%;
+  }
+
+  #guidelinescontainer h3, #vaccinecontainer h3{
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .subscribe p{
+    font-size: 14px;
+  }
+
+  footer div p{
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 768px){
+  .headercontainer h1{
+    font-size: 32px;
+  }
+
+  .headercontainer h3{
+    font-size: 24px;
+  }
+
+  .cardcontainer{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .confirmedcard, .activecard{
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .subheading{
+    width: 50%;
+  }
+
+  .recoveredcontainer, .deceasedcontainer{
+    margin-top: 75px;
+  }
+
+  .subheadingtwo{
+    width: 50%;
+  }
+
+  .guidelinesheader .subheadingthree{
+    width: 50%;
+  }
+
+  .guidelinesouter{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  #guidelinescontainer, #vaccinecontainer{
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 992px){
+  .cardcontainer .card{
+    width: 200px;
+  }
+
+  .subheading{
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1200px){
+  .cardcontainer .card{
+    width: 200px;
+  }
+  .subheading{
+    width: 50%;
+  }
 }
