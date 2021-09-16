@@ -221,7 +221,7 @@ var deceasedChart = new Chart(deceasedChartCanvas, {
 });
 
 fetch("https://api.covid19india.org/data.json", {
-    mode : "no-cors"
+    mode : "cors"
 })
   .then((res) => res.json())
   .then((data) => {
