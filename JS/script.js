@@ -220,7 +220,9 @@ var deceasedChart = new Chart(deceasedChartCanvas, {
   },
 });
 
-fetch("https://api.covid19india.org/data.json", {})
+fetch("https://api.covid19india.org/data.json", {
+    mode : "no-cors"
+})
   .then((res) => res.json())
   .then((data) => {
     let pastMonth = data.cases_time_series.length - 30;
